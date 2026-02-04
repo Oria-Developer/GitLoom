@@ -1,6 +1,6 @@
-# Gippy
+# Gitpy
 
-Gippy is a Python tool and library that syncs a local folder to a GitHub repository and keeps it updated. It watches for file changes and automatically commits + pushes updates when you save files.
+Gitpy is a Python tool and library that syncs a local folder to a GitHub repository and keeps it updated. It watches for file changes and automatically commits + pushes updates when you save files.
 
 ## Features
 
@@ -18,52 +18,52 @@ Gippy is a Python tool and library that syncs a local folder to a GitHub reposit
 ## Installation
 
 ```bash
-pip install gippy
+pip install gitpy
 ```
 
 ## Quick start
 
 ```bash
 # Initialize and connect a folder to a GitHub repo
-gippy init --repo-path . --remote git@github.com:your-org/your-repo.git
+gitpy init --repo-path . --remote git@github.com:your-org/your-repo.git
 
 # One-time sync
-gippy sync --repo-path .
+gitpy sync --repo-path .
 
 # Watch for changes and auto-sync
-gippy watch --repo-path .
+gitpy watch --repo-path .
 ```
 
 ## CLI commands
 
-### `gippy init`
+### `gitpy init`
 
 Initializes a git repository (if missing) and sets the remote.
 
 ```bash
-gippy init --repo-path /path/to/folder --remote git@github.com:your-org/repo.git --branch main
+gitpy init --repo-path /path/to/folder --remote git@github.com:your-org/repo.git --branch main
 ```
 
-### `gippy sync`
+### `gitpy sync`
 
 Stages, commits, and pushes any changes.
 
 ```bash
-gippy sync --repo-path /path/to/folder --message "Auto-sync" --branch main
+gitpy sync --repo-path /path/to/folder --message "Auto-sync" --branch main
 ```
 
-### `gippy watch`
+### `gitpy watch`
 
 Runs a file watcher and syncs on changes.
 
 ```bash
-gippy watch --repo-path /path/to/folder --message "Auto-sync" --branch main
+gitpy watch --repo-path /path/to/folder --message "Auto-sync" --branch main
 ```
 
 ## Library usage
 
 ```python
-from gippy.sync import sync_once, watch
+from gitpy.sync import sync_once, watch
 
 sync_once(repo_path=".", remote_url="git@github.com:your-org/repo.git")
 
